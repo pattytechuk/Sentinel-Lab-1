@@ -1,4 +1,4 @@
-# Sentinel1
+# Sentinel-Lab-1
 **Azure Sentinel Lab 1** 
 
 This lab exercise involved setting up Azure resources (e.g. Resource Group & VM) and deploying Microsoft Defender for Cloud and Azure Sentinel as well as setting up detection rules via Log Analytics to detect a potential malicious action on a system. 
