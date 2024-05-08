@@ -1,4 +1,6 @@
 # Sentinel-Lab-1
+<img src="https://github.com/pattytechuk/Sentinel-Lab-1/assets/167561785/58ce9801-6a63-4bf7-a037-d562f72ece84" width="300" height="150" alt="Description of the image">
+
 **Azure Sentinel Lab 1** 
 
 This lab exercise involved setting up Azure resources (e.g. Resource Group & VM) and deploying Microsoft Defender for Cloud and Azure Sentinel as well as setting up detection rules via Log Analytics to detect a potential malicious action on a system. 
@@ -18,7 +20,8 @@ This lab exercise involved setting up Azure resources (e.g. Resource Group & VM)
 Please refer to attached documentation for step-by-step actions taken, as well as all KQL queries used for setting up log analytics rules.
 
 ## Network Design and Topology
-![Untitled](https://github.com/pattytechuk/Sentinel1/assets/167561785/65fc9cc7-86de-4479-b609-bc9511db89f1)
+<img src="https://github.com/pattytechuk/Sentinel1/assets/167561785/65fc9cc7-86de-4479-b609-bc9511db89f1" style="width:75%;" alt="Description of the image">
+
 (Source: CyberWox)
 
 
