@@ -1,0 +1,25 @@
+//SENTINEL ANALYTICS - RULE LOGIC VIA KQL
+
+//Searching for successful log in attempts
+SecurityEvent
+| where EventID == 4624
+| project TimeGenerated, Computer, AccountName
+
+// Searching for failed log ons
+SecurityEvent
+| where EventID == 4625
+| project TimeGenerated, Computer, AccountName
+
+// NMap scan 
+SecurityEvent
+| where EventID == 4688 // Process Creation
+| where CommandLine contains "nmap" 
+| project TimeGenerated, Computer, AccountName, CommandLine
+
+//Captures Event Viewer Log 4698 - Scheduled Task Created
+SecurityEvent
+| where EventID == 4698
+| parse EventData with * '<Data Name="SubjectUserName">' User '</Data>' *
+| parse EventData with * '<Data Name="TaskName">' NameofScheduledTask '</Data>' *
+| parse EventData with * '<Data Name="ClientProcessId">' ClientProcessID '</Data>' *
+| project Computer, TimeGenerated, ClientProcessID, NameofScheduledTask, User
