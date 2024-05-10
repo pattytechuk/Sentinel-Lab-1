@@ -26,6 +26,7 @@ Please refer to attached documentation for step-by-step actions taken, as well a
 16. Reference MITRE ATT&CK framework to mitigate risk for these incidents.
 
 ## Network Design and Topology
+<img src="https://github.com/pattytechuk/Sentinel-Lab-1/assets/167561785/1c631bdf-efd2-49dd-a621-85e73284f273" width="600" height="600" alt="MITRE ATT&CK">
 
 (Source: CyberWox)
 
@@ -56,3 +57,6 @@ MITRE ATT&CK would classify this as a persistent technique - Scheduled Task/Job 
 
 ## Resources
 Please visit CyberWox's [site](https://cyberwoxacademy.com/azure-cloud-detection-lab-project/) for more information.
+
+[MITRE ATT&CK framework](https://attack.mitre.org/).
+
