@@ -1,23 +1,30 @@
 # Sentinel-Lab-1
 <img src="https://github.com/pattytechuk/Sentinel-Lab-1/assets/167561785/58ce9801-6a63-4bf7-a037-d562f72ece84" width="300" height="150" alt="Description of the image">
 
-**Azure Sentinel Lab 1** 
+## Azure Sentinel & Microsoft Defender Lab 
 
-This lab exercise involved setting up Azure resources (e.g. Resource Group & VM) and deploying Microsoft Defender for Cloud and Azure Sentinel as well as setting up detection rules via Log Analytics to detect a potential malicious action on a system. 
+The objective of this project was to set up Azure resources (e.g. Resource Group & VM),  deploy Microsoft Defender for Cloud and deploy a SIEM (Azure Sentinel) to detect security events.
+This lab project was adapted from Cyberwox Academy.
 
-**At a high level view, here are the activities done in this lab:**
-- Configured and deployed Azure Resources - Log Analytics Workspace, Virtual Machines, and Azure Sentinel
-- Enabled Microsoft Defender for Cloud
-- Implemented Network and Virtual Machine Security Best Practices
-    - Just in Time connections to VM to prevent unauthorised access
-- Utilised Data Connectors to bring data into Sentinel for Analysis
-- Examined Windows Security Event logs
-- Configured Windows Security Policies to log security events
-- Utilised KQL to query Logs in Azure Sentinel
-- Wrote custom rules to detect Microsoft Security Events in Log Analytics
-- Referenced MITRE ATT&CK to better understand and mitigate common tactics, techniques used in attacks
-
+## Steps
 Please refer to attached documentation for step-by-step actions taken, as well as all KQL queries used for setting up log analytics rules.
+
+1. Sign up for Azure free account.
+2. Deploy Microsoft Defender for Cloud - enable all plans.
+3. Deploy Azure Sentinel workspace.
+4. Create a new Azure Resource Group.
+5. Create a new Azure Virtual Machine (VM).
+6. Enable Just in Time access to VM to prevent unauthorised access and to provide access to only approved IPs for specified time.
+7. Configure data connector 'Windows Security Events via AMA' in Sentinel to ingest and pull in data from VM's Windows Security Logs.
+8. Log into VM.
+9. Observe Security Logs in Windows Event Viewer.
+10. Configure Scheduled Task in VM to open an application (i.e. Internet Explorer) to simulate a potentially malicious action; check in Security Logs for the event ID.
+11. Create custom detection rule in Sentinel's Analytics to detect this event using KQL query.
+12. Try a number of failed log in attempts on Windows VM to simulate another potentially malicious action.
+13. Log into Windows VM and observe event ID in Event Viewer > Security Logs to capture event ID.
+14. Go back to Azure Sentinel and configure second detection rule to detect this event using another KQL query.
+15. Go to 'Incidents' in Azure Sentinel to observe incidents.
+16. Reference MITRE ATT&CK framework to mitigate risk for these incidents.
 
 ## Network Design and Topology
 
@@ -25,20 +32,9 @@ Please refer to attached documentation for step-by-step actions taken, as well a
 
 (Source: CyberWox)
 
+## Incidents in SIEM
+![Untitled](https://github.com/pattytechuk/Sentinel-Lab-1/assets/167561785/3dd371f3-9fcf-4e52-a5d9-39685de2a883)
 
-## VM Security 
+## Usage
 
-Here we set up Just in Time rules to prevent unauthorised access to the VM. RDP is allowed for a pre-set amount of time but only from specific IPs; anyone who does not meet this criteria is denied access as a result of this rule. 
-![JIT](https://github.com/pattytechuk/Sentinel1/assets/167561785/3d6dbadd-3b97-42dd-8d07-87afffd153d6)
-
-
-## Utilised Data Connectors to bring in data into Sentinel
-
-Here I set up data connector 'Windows Security Events via AMA' to collect data from Windows VM.
-![data connectors1](https://github.com/pattytechuk/Sentinel1/assets/167561785/cea10400-1094-4bc9-8721-d955b8224838)
-![data connectors2](https://github.com/pattytechuk/Sentinel1/assets/167561785/93974495-b999-4c65-8957-c8510641ec2d)
-![data connectors3](https://github.com/pattytechuk/Sentinel1/assets/167561785/7b66c32a-8adf-4795-84e3-dc8342282307)
-
-## Referenced MITRE ATT&CK to better understand attack and find mitigations
-
-![sentinel incidents](https://github.com/pattytechuk/Sentinel-Lab-1/assets/167561785/8dc0d989-f681-45c5-9b7a-ed03e846681a)
+## Resources
