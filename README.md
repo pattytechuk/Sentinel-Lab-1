@@ -1,10 +1,9 @@
 # Sentinel-Lab-1
-<img src="https://github.com/pattytechuk/Sentinel-Lab-1/assets/167561785/58ce9801-6a63-4bf7-a037-d562f72ece84" width="300" height="150" alt="Description of the image">
 
 ## Azure Sentinel & Microsoft Defender Lab 
 
 The objective of this project was to set up Azure resources (e.g. Resource Group & VM),  deploy Microsoft Defender for Cloud and deploy a SIEM (Azure Sentinel) to detect security events.
-This lab project was adapted from Cyberwox Academy.
+This lab project was adapted from [Cyberwox](https://cyberwoxacademy.com/azure-cloud-detection-lab-project/).
 
 ## Steps
 Please refer to attached documentation for step-by-step actions taken, as well as all KQL queries used for setting up log analytics rules.
@@ -28,13 +27,32 @@ Please refer to attached documentation for step-by-step actions taken, as well a
 
 ## Network Design and Topology
 
-<img src="https://github.com/pattytechuk/Sentinel1/assets/167561785/65fc9cc7-86de-4479-b609-bc9511db89f1" style="width:75%;" alt="Description of the image">
-
 (Source: CyberWox)
 
 ## Incidents in SIEM
 ![Untitled](https://github.com/pattytechuk/Sentinel-Lab-1/assets/167561785/3dd371f3-9fcf-4e52-a5d9-39685de2a883)
 
-## Usage
+## Referencing MITRE ATT&CK framework 
+
+**Risk of Failed Login Attempts:**
+
+<img src="https://github.com/pattytechuk/Sentinel-Lab-1/assets/167561785/c3cd3351-ce7b-4ec8-8633-ad1d61f3ec37" width="600" height="300" alt="MITRE ATT&CK">
+
+(Above: MITRE ATT&CK classification repeated failed log in attempts).
+
+MITRE ATT&CK would classify this as a type of credential access technique - Brute Force (T1110) or Credential Stuffing (T1110).
+**Risks:** Continuous failed login attempts can indicate an attempt to guess valid credentials through brute force or credential stuffing, leading to account compromise.
+Denial of Service (DoS): Excessive failed login attempts can result in account lockouts, potentially causing a denial of service for legitimate users.
+**Remediation Techniques (MITRE ATT&CK Mitigation):** Account lock out policies, rate limiting, 2FA, and monitoring/logging.
+
+<img src="https://github.com/pattytechuk/Sentinel-Lab-1/assets/167561785/b8442358-6e0e-4639-bcc2-3b5b1f142793" width="600" height="300" alt="MITRE ATT&CK">
+
+(Above: MITRE ATT&CK classification creation of schedule tasks).
+
+**Risk of Creating Scheduled Tasks:**
+MITRE ATT&CK would classify this as a persistent technique - Scheduled Task/Job (T1053).
+**Risks:** Creating scheduled tasks without proper validation can result in executing unauthorized or malicious code. It's also associated with privilege escalation.
+**Remediation Techniques (MITRE ATT&CK Mitigation):** Utilising Principle of Least Privilege for scheduled tasks; conducting regular audits and reviews of schedule dtasks to ensure they are legitimate; whitelisting to restrict execution of scheduled tasks to specifically approved scripts and commands.
 
 ## Resources
+Please visit CyberWox's [site](https://cyberwoxacademy.com/azure-cloud-detection-lab-project/) for more information.
